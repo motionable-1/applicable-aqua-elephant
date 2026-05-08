@@ -1,0 +1,226 @@
+/* Global native CSS for the starter project. */
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #05060a;
+  color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.app-preview-shell {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+.app-preview-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08), transparent 45%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 35%);
+}
+
+.app-preview-stage,
+.app-preview-center {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-preview-center {
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+}
+
+.app-player-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.55);
+}
+
+.app-player-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.app-player-highlight {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 40px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.scene-controls {
+  position: relative;
+  z-index: 3;
+  width: min(960px, 92vw);
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(12, 12, 14, 0.82);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+.scene-controls-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scene-control-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scene-control-track::-webkit-scrollbar {
+  display: none;
+}
+
+.scene-control-button {
+  position: relative;
+  flex: 1 0 112px;
+  min-width: 112px;
+  height: 52px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.06);
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.scene-control-button:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.scene-control-button-active {
+  border-color: rgba(255, 82, 69, 0.72);
+  color: #fff;
+  background: linear-gradient(135deg, #ff5145, #ff3f35);
+}
+
+.scene-control-label,
+.scene-control-time {
+  position: relative;
+  z-index: 1;
+  display: block;
+  white-space: nowrap;
+}
+
+.scene-control-label {
+  font-size: 14px;
+  font-weight: 760;
+  line-height: 1.15;
+}
+
+.scene-control-time {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.scene-control-button-active .scene-control-time {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.scene-control-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  transform-origin: left center;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 720px) {
+  .app-preview-shell {
+    padding: 10px;
+  }
+
+  .app-preview-center {
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .scene-controls {
+    width: min(100%, 92vw);
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .scene-control-button {
+    flex-basis: 96px;
+    min-width: 96px;
+    height: 48px;
+  }
+
+  .scene-control-label {
+    font-size: 12px;
+  }
+}

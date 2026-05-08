@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:motionarray.com)",
+      "WebSearch",
+      "WebFetch(domain:elements.envato.com)",
+      "WebFetch(domain:filtergrade.com)",
+      "WebFetch(domain:videohive.net)",
+      "WebFetch(domain:www.lummi.ai)",
+      "WebFetch(domain:motionbro.com)",
+      "WebFetch(domain:sickboat.com)",
+      "WebFetch(domain:blog.gfxplugin.com)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:gfxchill.com)",
+      "WebFetch(domain:aedownload.com)",
+      "WebFetch(domain:gfxplugin.com)",
+      "WebFetch(domain:motionbro.net)",
+      "WebFetch(domain:dankreiness.com)",
+      "WebFetch(domain:motioncan.net)"
+    ]
+  }
+}
