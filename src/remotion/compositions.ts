@@ -19,15 +19,15 @@ export type CompositionConfig = {
 export const composition: CompositionConfig = {
   id: "Main",
   component: Main,
-  durationInFrames: 465,
+  durationInFrames: 540,
   fps: 30,
   width: 1280,
   height: 720,
   scenes: [
-    { label: "Brand Reveal", from: 0, durationInFrames: 87 },
-    { label: "Noise To Signal", from: 87, durationInFrames: 87 },
-    { label: "Live Trace", from: 174, durationInFrames: 87 },
-    { label: "Proof Metrics", from: 261, durationInFrames: 87 },
-    { label: "Final CTA", from: 348, durationInFrames: 117 },
+    { label: "Brand Reveal", from: 0, durationInFrames: 102 },
+    { label: "Noise To Signal", from: 102, durationInFrames: 102 },
+    { label: "Live Trace", from: 204, durationInFrames: 102 },
+    { label: "Proof Metrics", from: 306, durationInFrames: 102 },
+    { label: "Final CTA", from: 408, durationInFrames: 132 },
   ],
 };

@@ -7,11 +7,11 @@ import "./TracePilot.css";
 const STATIC_RECONSTRUCTION = false;
 
 const SCENES = [
-  { label: "Brand Reveal", from: 0, duration: 87 },
-  { label: "Noise To Signal", from: 87, duration: 87 },
-  { label: "Live Trace", from: 174, duration: 87 },
-  { label: "Proof Metrics", from: 261, duration: 87 },
-  { label: "Final CTA", from: 348, duration: 117 },
+  { label: "Brand Reveal", from: 0, duration: 102 },
+  { label: "Noise To Signal", from: 102, duration: 102 },
+  { label: "Live Trace", from: 204, duration: 102 },
+  { label: "Proof Metrics", from: 306, duration: 102 },
+  { label: "Final CTA", from: 408, duration: 132 },
 ] as const;
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -27,7 +27,7 @@ const maybeZero = (value: number) => (STATIC_RECONSTRUCTION ? 0 : value);
 
 const sceneOpacity = (frame: number, from: number, duration: number) => {
   if (STATIC_RECONSTRUCTION) return frame >= from && frame < from + duration ? 1 : 0;
-  return interpolate(frame, [from - 12, from + 10, from + duration - 14, from + duration + 10], [0, 1, 1, 0], {
+  return interpolate(frame, [from - 16, from + 16, from + duration - 22, from + duration + 14], [0, 1, 1, 0], {
     ...clamp,
     easing: smooth,
   });
@@ -35,7 +35,7 @@ const sceneOpacity = (frame: number, from: number, duration: number) => {
 
 const foregroundOpacity = (local: number, duration: number) => {
   if (STATIC_RECONSTRUCTION) return 1;
-  return interpolate(local, [8, 24, duration - 28, duration - 10], [0, 1, 1, 0], { ...clamp, easing: smooth });
+  return interpolate(local, [10, 32, duration - 48, duration - 24], [0, 1, 1, 0], { ...clamp, easing: smooth });
 };
 
 const entrance = (frame: number, start: number, fps: number, stiffness = 112) => {
@@ -45,7 +45,7 @@ const entrance = (frame: number, start: number, fps: number, stiffness = 112) =>
     frame: frame - start,
     fps,
     config: { damping: 17, mass: 0.72, stiffness },
-    durationInFrames: 24,
+    durationInFrames: 30,
   });
 };
 
